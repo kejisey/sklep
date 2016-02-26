@@ -1,0 +1,486 @@
+{% load staticfiles %}
+<!--DOCTYPE html -->
+<html>
+<head>
+<title>{% block head_title %}Hello Bro!{% endblock head_title %}</title>
+
+<!-- 
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #F5F5F5;
+    border-right: 1px solid #EEE;
+    }
+-->
+
+<!-- Lobster font font -->
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<!-- Rancho font font -->
+<link href='https://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+<!-- Abril Fatface font -->
+ <link href='http://fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<!-- Hind font -->
+<link href='https://fonts.googleapis.com/css?family=Hind' rel='stylesheet' type='text/css'>
+<!-- Cookie font -->
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<link rel='stylesheet' href='{% static "css/base.css" %}' />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href = "css/styles.css" rel = "stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+
+<style>
+  
+  address {
+     color: white;
+     padding-top:20px;
+     font-family: 'Hind', sans-serif;
+  }
+
+  body {
+      background-color: #e6e6e6;
+  }
+
+  h1 {
+     color: red;
+     font-family: 'Lobster';
+  }
+
+  h5 {
+
+     font-family: 'Lobster';
+  }
+
+  h4 a {
+     color: black;
+     font-family: 'Lobster';
+  }
+
+  h2 li a{
+      color: ;
+      font-family: 'Abril Fatface', sans-serif;
+  }
+
+  h2 li {
+      color: ;
+      font-family: 'Abril Fatface', sans-serif;
+  }
+
+  .carousel-holder {
+    padding-bottom: 15px;
+  }
+
+  .row.pierwszy {
+      padding-top: 56px;
+  }
+
+  .container.pierwszy {
+     padding-bottom: 17px;
+  }
+
+  .fotakoguta {
+     width: 100%;
+      height: 80px;
+     background-image: url('');
+     background-repeat: no-repeat;
+      background-size: contain;
+  }
+
+  .sidebar {
+      background-color: #e6e6e3;
+      height: 100%;
+  }
+
+  li a {
+     display: block;
+     color: #000;
+     padding: 8px 0 8px 16px;
+      text-decoration: none;
+  }
+
+  /* Change the link color on hover */
+  li a:hover {
+     background-color: #555;
+      color: white;
+  }
+
+  .thumbnail{
+    width: 220px;
+    height: 350px;
+    overflow: auto;
+  }
+
+  .slide-image {
+  width: auto;
+  height: 300px;
+  max-height: 300px;
+  }
+
+.footer-distributed{
+  background-color: black;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+
+  padding: 55px 50px;
+  margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 35%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  #5383d3;
+  text-decoration: none;;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+{% include "messages_display.html" %}
+  <!-- Navbar top -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container pierwszy">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img class="fota" src="" img="responsive" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <h1>Sklep Kogucik </h1>  
+                  </li>
+                  </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <h5>
+                      <address>
+                      <strong>Drygalski Allee 117, </strong>
+                      M81477 München<br>
+                      Telefon: 015211401566,
+                      <strong> Andrzej Dallak</strong><br>
+                      </address>
+                      </h5>
+                  </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<div class="container">
+	<div class="row pierwszy">
+<!-- left sidebar -->
+    <div class="col-sm-3 sidebar sticky">
+            <ul class="nav nav-sidebar">
+              <h1>
+                <li><a href="{% url "posts:list" %}">Kategorie</a></li>
+                <li><a href="{% url "posts:wedliny" %}">Wędliny</a></li>
+                <li><a href="{% url "posts:garmazeria" %}">Garmażeria</a></li>
+                <li><a href="{% url "posts:art_spozywcze" %}">Art. spożywcze</a></li>
+                <li><a href="{% url "posts:napoje" %}">Napoje</a></li>
+                <li><a href=""></a> </li>
+                <li><a href=""></a> </li>
+              </h1>
+            </ul>
+<!-- Set height and width with CSS -->
+<div id="googleMap" style="height:333px;width:100%;">
+</div>
+
+<!-- Google Maps -->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+
+var myCenter = new google.maps.LatLng(48.0821621, 11.5040044);
+
+function initialize() {
+var mapProp = {
+center:myCenter,
+zoom:14,
+scrollwheel:false,
+draggable:false,
+mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+position:myCenter,
+});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</div>
+
+<!-- 3 photo carousel 800x300 -->
+<div class="col-sm-9">
+    <div class="row carousel-holder">
+          <div class="col-md-9">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="slide-image img-responsive center-block" src="http://www.tarczynski.pl/pl/f/v/763/800/600/WIEPRZOWY%20ZMIENNA%20WAGA%20EXTRA%20IMG%200026%201.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image img-responsive center-block" src="http://www.tarczynski.pl/pl/f/v/763/800/600/WIEPRZOWY%20ZMIENNA%20WAGA%20EXTRA%20IMG%200026%201.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image img-responsive center-block" src="http://www.tarczynski.pl/pl/f/v/641/800/600/SEROWY%20IMG%200092%201.jpg" alt="">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                </div>
+          </div>
+
+    </div>
+
+</div>
+
+{% block content %}
+
+{% endblock content %}
+
+</div>
+
+</div>
+
+<footer class="footer-distributed">
+      <div class="footer-left">
+        <h3>Company<span>logo</span></h3>
+        <p class="footer-links">
+          <a href="#">Home</a>
+          ·
+          <a href="#">Contact</a>
+        </p>
+        <p class="footer-company-name">Company Name &copy; 2015</p>
+      </div>
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>117 Drygalski Allee</span> Monachium, Niemcy</p>
+        </div>
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+015211401566</p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:kejisey@gmail.com">kejisey@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the company</span>
+          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+        <div class="footer-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+      </div>
+</footer>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
+      <script src="../../assets/js/docs.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>

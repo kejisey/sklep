@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="col-sm-9">
+    <div class="row">
+          {% for napoj in napoje_q %}
+              <div class="col-sm-2">
+                <div class="thumbnail">
+                        {% if napoj.image %}
+                          <img src='{{ napoj.image.url }}' class='img-responsive'/>
+                        {% endif %}
+
+                  <div class="caption">
+                        <h4><a href='{{ napoj.get_absolute_url }}'>{{ napoj.title }}</a>
+                        </h4>
+                        <p>{{ napoj.content|linebreaks|truncatechars:120 }}</p>
+
+                        <h5 class="pull-right">€ {{napoj.price }}</h5>
+                        <a href="{{ napoj.get_absolute_url }}" class="btn btn-default btn-sm" role="button">Zobacz</a>
+                  </div>  
+                </div>
+              </div>
+           {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
